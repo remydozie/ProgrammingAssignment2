@@ -33,3 +33,22 @@ cacheSolve <- function(x, ...) {
         return(inv_x)
     }
 }
+# Testing functions
+> z <- diag(2, 3)
+> z
+     [,1] [,2] [,3]
+[1,]    2    0    0
+[2,]    0    2    0
+[3,]    0    0    2
+> new_matrix <- makeCacheMatrix(z)
+> cacheSolve(new_matrix)
+     [,1] [,2] [,3]
+[1,]  0.5  0.0  0.0
+[2,]  0.0  0.5  0.0
+[3,]  0.0  0.0  0.5
+> cacheSolve(new_matrix)
+getting cached inverse matrix
+     [,1] [,2] [,3]
+[1,]  0.5  0.0  0.0
+[2,]  0.0  0.5  0.0
+[3,]  0.0  0.0  0.5
